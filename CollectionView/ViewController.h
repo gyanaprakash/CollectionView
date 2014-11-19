@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSCell.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *cv;
+@property (strong, nonatomic) IBOutlet UICollectionViewCell *cell;
 
 @end
 

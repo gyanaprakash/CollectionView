@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC98EA5F1A1CB73B003AFE56 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC98EA5E1A1CB73B003AFE56 /* AssetsLibrary.framework */; };
 		BC9FF1C31A1B88D700CA46E8 /* CSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9FF1C11A1B88D700CA46E8 /* CSCell.m */; };
 		BC9FF1C41A1B88D700CA46E8 /* CSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9FF1C21A1B88D700CA46E8 /* CSCell.xib */; };
 		BCB9C0311A1B49E3004D0C0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB9C0301A1B49E3004D0C0E /* main.m */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC98EA5E1A1CB73B003AFE56 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		BC9FF1C01A1B88D700CA46E8 /* CSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCell.h; sourceTree = "<group>"; };
 		BC9FF1C11A1B88D700CA46E8 /* CSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCell.m; sourceTree = "<group>"; };
 		BC9FF1C21A1B88D700CA46E8 /* CSCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSCell.xib; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC98EA5F1A1CB73B003AFE56 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +121,7 @@
 		BCB9C0221A1B49E3004D0C0E = {
 			isa = PBXGroup;
 			children = (
+				BC98EA5E1A1CB73B003AFE56 /* AssetsLibrary.framework */,
 				BCB9C02D1A1B49E3004D0C0E /* CollectionView */,
 				BCB9C0471A1B49E4004D0C0E /* CollectionViewTests */,
 				BCB9C02C1A1B49E3004D0C0E /* Products */,

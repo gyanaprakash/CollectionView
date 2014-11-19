@@ -13,26 +13,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="184" height="256"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ncw-1a-8gd">
-                        <rect key="frame" x="8" y="174" width="168" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="8" y="223" width="168" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2nw-cy-6ub">
-                        <rect key="frame" x="46" y="29" width="92" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="8" y="8" width="168" height="207"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92259954639999997" green="0.76609753020000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eHb-UL-LEY">
-                        <rect key="frame" x="69" y="218" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.76609753020000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.92259954639999997" green="0.76609753020000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                            <color key="titleShadowColor" red="0.92259954639999997" green="0.76609753020000004" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                        </state>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>

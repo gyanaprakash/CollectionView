@@ -27,7 +27,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.76470595600000002" green="0.36862745879999997" blue="0.1764705926" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <size key="customSize" width="184" height="256"/>
             <connections>
                 <outlet property="imageView" destination="2nw-cy-6ub" id="4lK-hk-v7M"/>

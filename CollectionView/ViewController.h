@@ -12,7 +12,7 @@
 @interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *cv;
-@property (strong, nonatomic) IBOutlet UICollectionViewCell *cell;
+//@property (strong, nonatomic) IBOutlet UICollectionViewCell *cell;
 
 @end
 

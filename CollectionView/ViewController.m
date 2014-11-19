@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "CSCell.h"
 
 @interface ViewController ()
 {
     NSArray *collectionTitle;
+    NSArray *imgArray;
 }
 @end
 
@@ -18,10 +20,10 @@
 
 - (void)viewDidLoad
 {
+    imgArray = @[@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg"];
 
-    [_cv registerClass:[CSCell class] forCellWithReuseIdentifier:@"CSCell"];
+    [self.cv registerNib:[UINib nibWithNibName:@"CSCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
-
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -29,30 +31,25 @@
 //*********************************************************************************************************
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return 100;
+    return imgArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
     return 1;
 }
-// 3
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = (CSCell*)[_cv dequeueReusableCellWithReuseIdentifier:@"CSCell" forIndexPath:indexPath];
-    [cell setBackgroundColor:[UIColor greenColor]];
-    cell.backgroundView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@""]];
-    
+    CSCell *cell = [_cv dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    [cell.imageView setImage:[UIImage imageNamed:[imgArray objectAtIndex:indexPath.row]]];
+    [cell.xyz setText:[imgArray objectAtIndex:indexPath.row]];
     return cell;
 }
 
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(60, 60);
-}
 // *********************************************************************************************************
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

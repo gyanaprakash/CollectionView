@@ -10,8 +10,11 @@
 
 @interface CSCell : UICollectionViewCell
 
+// *********************************************************************************************************
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *xyz;
 
+// *********************************************************************************************************
 
 @end

@@ -9,79 +9,100 @@
 #import "ViewController.h"
 #import "CSCell.h"
 
+// *********************************************************************************************************
+
 @interface ViewController ()
 {
-    NSArray *collectionTitle;
-    NSArray *imgArray;
-     UIImagePickerController *image;
+    ALAssetsLibrary *library;
      NSArray *assets;
+    NSArray *imgArray;
 }
 @end
 
 @implementation ViewController
 
+// *********************************************************************************************************
+
 - (void)viewDidLoad
 {
-    ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
+    [super viewDidLoad];
     
+    [self.cv registerNib:[UINib nibWithNibName:@"CSCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+
+   // imgArray = @[@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg"];
+    
+}
+
+// *********************************************************************************************************
+
+-(void)photos
+{
+    NSMutableArray *tmpAssets = [@[] mutableCopy];
+    library = [[ALAssetsLibrary alloc] init];
     [library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         if (group) {
-
-            [group setAssetsFilter:[ALAssetsFilter allPhotos]];
+            [group setAssetsFilter:[ALAssetsFilter allAssets]];
             [group enumerateAssetsUsingBlock:^(ALAsset *asset, NSUInteger index, BOOL *stop){
-                if (asset){
-                    NSLog(@"%@",asset);
-                    assets= [NSArray arrayWithObject:asset];
-
-                   // NSDictionary *meta = [[asset defaultRepresentation] metadata];
-                   // assets=[meta di];
-                   // NSLog(@"%@",asset);
+                if (asset)
+                {
+                    [tmpAssets addObject:asset];
+                    assets = [tmpAssets mutableCopy];
+                    [_cv reloadData];
                 }
+                NSLog(@"%lu",(unsigned long)[assets count]);
+
             }];
         }
     } failureBlock:^(NSError *error) {
         NSLog(@"error enumerating AssetLibrary groups %@\n", error);
     }];
-    
-    
-    imgArray = @[@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"images (9).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (14).jpeg",@"images (16).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (8).jpeg",@"images (13).jpeg",@"download (1).jpeg",@"download (2).jpeg",@"download (3).jpeg",@"download (4).jpeg",@"download (5).jpeg",@"download (6).jpeg",@"download (7).jpeg",@"download.jpeg",@"images (1).jpeg",@"images (3).jpeg",@"images (16).jpeg",@"images (13).jpeg"];
-    [self.cv registerNib:[UINib nibWithNibName:@"CSCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
-    
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-//*********************************************************************************************************
-
-+ (ALAssetsLibrary *)defaultAssetsLibrary
-{
-    static dispatch_once_t pred = 0;
-    static ALAssetsLibrary *library = nil;
-    dispatch_once(&pred, ^{
-        library = [[ALAssetsLibrary alloc] init];
-    });
-    return library;
 }
 
 //*********************************************************************************************************
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section
 {
-    return imgArray.count;
+    NSLog(@"%lu",(unsigned long)[assets count]);
+
+    return assets.count;
 }
+
+// *********************************************************************************************************
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
 {
     return 1;
 }
 
+// *********************************************************************************************************
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CSCell *cell = [_cv dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
- 
-    [cell.imageView setImage:[UIImage imageNamed:[imgArray objectAtIndex:indexPath.row]]];
-    [cell.xyz setText:[imgArray objectAtIndex:indexPath.row]];
+    [cell.imageView setImage:[UIImage imageWithCGImage:[[assets objectAtIndex:indexPath.row] thumbnail]]];
     return cell;
+}
+
+// *********************************************************************************************************
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%@",[assets objectAtIndex:indexPath.row]);
+    [self.imagevw setFrame:[[UIScreen mainScreen] bounds]];
+    [self.view addSubview:self.imagevw];
+    [self.imageVwimg setImage:[UIImage imageWithCGImage:[[assets objectAtIndex:indexPath.row] thumbnail]]];
+    return indexPath.row;
+}
+
+// *********************************************************************************************************
+
+
+
+
+// *********************************************************************************************************
+
+- (IBAction)okClick:(UIButton *)sender {
+    [self.imagevw removeFromSuperview];
 }
 
 // *********************************************************************************************************
@@ -91,5 +112,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

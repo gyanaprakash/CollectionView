@@ -118,6 +118,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BCB6E8131A22FD5600372B44 /* CsCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC9FF1C01A1B88D700CA46E8 /* CSCell.h */,
+				BC9FF1C11A1B88D700CA46E8 /* CSCell.m */,
+				BC9FF1C21A1B88D700CA46E8 /* CSCell.xib */,
+			);
+			name = CsCell;
+			sourceTree = "<group>";
+		};
 		BCB9C0221A1B49E3004D0C0E = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +156,7 @@
 				BCB9C0351A1B49E3004D0C0E /* ViewController.h */,
 				BCB9C0361A1B49E3004D0C0E /* ViewController.m */,
 				BCB9C0541A1B4C08004D0C0E /* ViewController.xib */,
-				BC9FF1C01A1B88D700CA46E8 /* CSCell.h */,
-				BC9FF1C11A1B88D700CA46E8 /* CSCell.m */,
-				BC9FF1C21A1B88D700CA46E8 /* CSCell.xib */,
+				BCB6E8131A22FD5600372B44 /* CsCell */,
 				BCB9C03B1A1B49E4004D0C0E /* Images.xcassets */,
 				BCB9C03D1A1B49E4004D0C0E /* LaunchScreen.xib */,
 				BCB9C02E1A1B49E3004D0C0E /* Supporting Files */,

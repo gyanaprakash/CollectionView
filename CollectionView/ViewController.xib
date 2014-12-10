@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="cv" destination="zyx-oq-iPN" id="fNa-na-ZjM"/>
+                <outlet property="imageVwimg" destination="E14-e6-unx" id="9zz-ip-rkJ"/>
+                <outlet property="imagevw" destination="NSg-eb-epg" id="jgw-lk-vMN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xOZ-iB-Nzm"/>
             </connections>
         </placeholder>
@@ -19,11 +21,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="12" id="6WV-MG-T3s">
-                        <size key="itemSize" width="260" height="269"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="6WV-MG-T3s">
+                        <size key="itemSize" width="100" height="100"/>
+                        <size key="headerReferenceSize" width="0.0" height="10"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="SY9-0s-MUE"/>
@@ -32,7 +34,31 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="334" y="58"/>
+            <point key="canvasLocation" x="97" y="-119"/>
+        </view>
+        <view opaque="NO" contentMode="scaleToFill" id="NSg-eb-epg">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="E14-e6-unx">
+                    <rect key="frame" x="8" y="42" width="304" height="472"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ePf-jB-CwV">
+                    <rect key="frame" x="113" y="522" width="95" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.53725492949999998" green="0.51372551919999998" blue="0.48627454040000001" alpha="1" colorSpace="deviceRGB"/>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="okClick:" destination="-1" eventType="touchUpInside" id="Zmg-3x-twv"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="458" y="-119"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

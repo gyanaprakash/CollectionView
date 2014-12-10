@@ -23,7 +23,6 @@
     [self.navi setNavigationBarHidden:YES];
     self.window.rootViewController = _navi;
     [self.window makeKeyAndVisible];
-                 // Override point for customization after application launch.
     return YES;
 }
 
